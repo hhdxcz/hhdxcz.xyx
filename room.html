@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>房间</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <a class="link" href="./index.html">← 返回大厅</a>
+        <h1 class="title">房间</h1>
+        <p class="subtitle">
+          当前游戏：<span id="gameName" class="chip"></span>
+        </p>
+      </header>
+
+      <section class="panel stack">
+        <div class="stack gap-8">
+          <label class="label" for="roomCode">输入房间号</label>
+          <div class="row">
+            <input
+              id="roomCode"
+              class="input"
+              inputmode="latin"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="例如：A1B2C3"
+              maxlength="10"
+            />
+            <button id="joinBtn" class="btn primary" type="button">加入</button>
+          </div>
+          <p class="hint muted">房间号不区分大小写，支持 3–10 位字母/数字。</p>
+        </div>
+
+        <div class="divider" role="separator"></div>
+
+        <div class="stack gap-8">
+          <label class="label" for="relayUrl">联机服务器（跨设备）</label>
+          <div class="row">
+            <input id="relayUrl" class="input" autocomplete="off" spellcheck="false" placeholder="wss://你的联机服务器" />
+            <button id="saveRelayBtn" class="btn" type="button">保存</button>
+            <button id="clearRelayBtn" class="btn" type="button">清除</button>
+          </div>
+          <p class="hint muted">跨设备联机需要配置 WebSocket 联机服务器；同一设备多标签不需要。</p>
+        </div>
+
+        <div class="divider" role="separator"></div>
+
+        <div class="row wrap">
+          <button id="createBtn" class="btn" type="button">创建房间</button>
+        </div>
+
+        <div id="result" class="result hidden" aria-live="polite">
+          <div class="resultTitle" id="resultTitle"></div>
+          <div class="resultCodeRow">
+            <span class="resultCode" id="resultCode"></span>
+            <button id="copyBtn" class="btn small" type="button">复制</button>
+          </div>
+          <div id="lobbyBox" class="stack gap-8 hidden">
+            <div class="label">房间成员</div>
+            <div id="memberList" class="row wrap"></div>
+            <div class="row wrap">
+              <button id="addAiBtn" class="btn hidden" type="button">添加一个AI</button>
+              <button id="removeAiBtn" class="btn hidden" type="button">减少一个AI</button>
+              <button id="hostStartBtn" class="btn primary hidden" type="button">房主开始</button>
+            </div>
+            <p id="lobbyHint" class="hint muted"></p>
+          </div>
+          <div class="row wrap">
+            <a id="startBtn" class="btn primary hidden" href="./index.html">进入游戏</a>
+          </div>
+          <p class="hint muted" id="resultHint"></p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./static/room.js"></script>
+  </body>
+</html>

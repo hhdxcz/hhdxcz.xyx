@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>飞行棋</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div class="row wrap">
+          <a class="link" id="backLink" href="./room.html">← 返回房间</a>
+          <span class="chip" id="roomChip"></span>
+          <span class="chip" id="roleChip"></span>
+          <span class="chip" id="turnChip"></span>
+          <span class="chip" id="diceChip"></span>
+        </div>
+        <h1 class="title">飞行棋</h1>
+        <p class="subtitle" id="statusText"></p>
+      </header>
+      <section class="panel fcPanel">
+        <div class="fcBoardBox">
+          <canvas class="fcCanvas" id="board"></canvas>
+          <div class="fcDiceOverlay hidden" id="diceOverlay" aria-hidden="true">
+            <div class="fcDiceFace" id="diceFace"></div>
+          </div>
+        </div>
+        <div class="row wrap">
+          <button class="btn primary" id="rollBtn" type="button">🎲 掷骰</button>
+          <button class="btn" id="passBtn" type="button">⏭ 跳过</button>
+          <button class="btn" id="resetBtn" type="button">↺ 重置</button>
+        </div>
+        <p class="hint muted" id="hintText"></p>
+      </section>
+    </main>
+    <script type="module" src="./static/flying_chess.js"></script>
+  </body>
+</html>

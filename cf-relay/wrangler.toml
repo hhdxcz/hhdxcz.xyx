@@ -1,0 +1,11 @@
+name = "xiaoyouxi-relay"
+main = "src/index.js"
+compatibility_date = "2026-03-14"
+
+[durable_objects]
+bindings = [{ name = "RELAY", class_name = "RelayRoom" }]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["RelayRoom"]
+
