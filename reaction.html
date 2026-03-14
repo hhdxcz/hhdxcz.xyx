@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>反应测试</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div class="row wrap">
+          <a class="link" id="backLink" href="./room.html">← 返回房间</a>
+          <span class="chip" id="roomChip"></span>
+          <span class="chip" id="roleChip"></span>
+        </div>
+        <h1 class="title">反应测试</h1>
+        <p class="subtitle" id="statusText"></p>
+      </header>
+      <section class="panel rxPanel">
+        <div class="rxPlayers muted" id="playersText"></div>
+        <button class="rxPad" id="padBtn" type="button">点击开始</button>
+        <div class="row wrap">
+          <button class="btn" id="readyBtn" type="button">准备/下一局</button>
+          <button class="btn" id="resetBtn" type="button">重置</button>
+        </div>
+        <p class="hint muted" id="hintText"></p>
+      </section>
+    </main>
+    <script type="module" src="./static/reaction.js"></script>
+  </body>
+</html>
